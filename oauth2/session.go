@@ -80,6 +80,7 @@ func (s *Session) GetJWTClaims() jwt.JWTClaimsContainer {
 	}
 
 	claims.Extra["client_id"] = s.ClientID
+	claims.Extra["azp"] = s.ClientID
 	return claims
 }
 
