@@ -144,9 +144,11 @@ func (v *Validator) Validate(c *Client) error {
 		}
 		redirs = append(redirs, *u)
 
-		if strings.Contains(r, "#") {
-			return errorsx.WithStack(ErrInvalidRedirectURI.WithHint("Redirect URIs must not contain fragments (#)."))
-		}
+		/*
+			if strings.Contains(r, "#") {
+				return errorsx.WithStack(ErrInvalidRedirectURI.WithHint("Redirect URIs must not contain fragments (#)."))
+			}
+		*/
 	}
 
 	if c.SubjectType != "" {
